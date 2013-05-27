@@ -8,7 +8,7 @@ function ($q , $rootScope , options){
       var deferred = $q.defer()
       navigator.geolocation.getCurrentPosition(function (pos) {
         $rootScope.$apply(function () {
-          deferred.resolve(pos)
+          deferred.resolve(angular.copy(pos))
         })
       }, function (error) {
         $rootScope.$apply(function () {
